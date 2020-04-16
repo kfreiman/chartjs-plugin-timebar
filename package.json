@@ -1,0 +1,28 @@
+{
+  "name": "timebar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-object-assign": "^7.8.3",
+    "chart.js": "^2.9.3",
+    "date-fns": "^2.12.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.2.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "scripts": {
+    "dev": "node dev-server.js"
+  },
+  "author": "Kirill Freiman",
+  "license": "ISC"
+}
