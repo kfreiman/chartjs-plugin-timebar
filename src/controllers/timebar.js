@@ -10,17 +10,17 @@ if (Chart.defaults.global.datasets && Chart.defaults.global.datasets.bar) {
   };
 }
 
-export const TimeBar = Chart.controllers.bar.extend({
+export const TimeBar = Chart.controllers.horizontalBar.extend({
   dataElementType: Chart.elements.HorisontalBarOnTime,
 
-  updateElement(elem, index, reset) {
-    Chart.controllers.bar.prototype.updateElement.call(
-      this,
-      elem,
-      index,
-      reset
-    );
-  },
+  // updateElement(elem, index, reset) {
+  //   Chart.controllers.bar.prototype.updateElement.call(
+  //     this,
+  //     elem,
+  //     index,
+  //     reset
+  //   );
+  // },
 });
 
 Chart.controllers.timebar = TimeBar;

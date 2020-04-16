@@ -37,7 +37,7 @@ const HorisontalBarOnTime = (Chart.elements.HorisontalBarOnTime = Chart.Element.
       // }
 
       // ctx.fillStyle = options.backgroundColor;
-      ctx.fillRect(100, 100, 100, 100);
+      ctx.fillRect(this._model.x, 100, 200, this._model.height);
 
       ctx.restore();
     },

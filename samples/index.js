@@ -61,9 +61,10 @@ window.onload = function () {
           maxBarThickness: 23.555555,
           barPercentage: 30.555555,
           backgroundColor: "rgba(255, 123, 0, 0.6)",
+
           data: [
             // { t: [new Date(2020, 3, 1), new Date(2020, 3, 2)], y: 0 },
-            { t: new Date(2020, 3, 1), y: 1 },
+            { x: new Date(2020, 3, 2), y: 1 },
             // { t: [new Date(2020, 3, 1), new Date(2020, 3, 2)], y: 1 },
           ],
         },
