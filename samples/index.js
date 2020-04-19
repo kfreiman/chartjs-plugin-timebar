@@ -1,10 +1,6 @@
-// import _ from "lodash";
-import printMe from "./print.js";
 import Chart from "chart.js";
 
-import TimeBarPlugin, { TimeBar } from "../src/index.js";
-
-printMe();
+import TimeBarPlugin from "../src/index.js";
 
 window.onload = function () {
   var ctx = document.getElementById("canvas").getContext("2d");
@@ -14,58 +10,18 @@ window.onload = function () {
     data: {
       datasets: [
         {
-          type: "line",
-          backgroundColor: "rgba(40,167,69, 0.2)",
-          data: [
-            { t: new Date(2020, 3, 2), y: 0 },
-            { t: new Date(2020, 3, 3, 10), y: 2 },
-            { t: new Date(2020, 3, 4), y: 0 },
-          ],
-        },
-        {
-          // test only line as bars
-          type: "line",
-          fill: false,
-          spanGaps: false,
-          borderCapStyle: "square",
-          borderWidth: 10,
-          backgroundColor: "rgba(40,167,69, 0.2)",
-          data: [
-            { t: new Date(2020, 3, 0, 6), y: 1 },
-            { t: new Date(2020, 3, 1), y: 1 },
-            { t: new Date(2020, 3, 1), y: null },
-            { t: new Date(2020, 3, 1), y: 1 },
-            { t: new Date(2020, 3, 1, 5), y: 1 },
-            { t: new Date(2020, 3, 1, 5), y: null },
-            { t: new Date(2020, 3, 2), y: 1 },
-            { t: new Date(2020, 3, 3, 10), y: 1 },
-            { t: new Date(2020, 3, 4), y: 1 },
-          ],
-        },
-        {
-          // test only time+bar
-          type: "bar",
-          // type: "bar",
-          maxBarThickness: 23.555555,
-          barPercentage: 30.555555,
-          backgroundColor: "rgba(0, 123, 255, 0.2)",
-          data: [
-            // { t: [new Date(2020, 3, 1), new Date(2020, 3, 2)], y: 0 },
-            { t: new Date(2020, 3, 3), y: 0.5 },
-          ],
-        },
-        {
-          // test only time+bar
           type: "timebar",
-          // type: "bar",
-          maxBarThickness: 23.555555,
-          barPercentage: 30.555555,
+          height: 0.5,
           backgroundColor: "rgba(255, 123, 0, 0.6)",
-
           data: [
-            // { t: [new Date(2020, 3, 1), new Date(2020, 3, 2)], y: 0 },
-            { x: new Date(2020, 3, 2), y: 1 },
-            // { t: [new Date(2020, 3, 1), new Date(2020, 3, 2)], y: 1 },
+            {
+              t: [new Date(2020, 3, 1), new Date(2020, 3, 2, 22)],
+              y: 0.5,
+            },
+            {
+              t: [new Date(2020, 3, 3), new Date(2020, 3, 4)],
+              y: 0.5,
+            },
           ],
         },
       ],
@@ -75,14 +31,21 @@ window.onload = function () {
       responsive: true,
       maintainAspectRatio: false,
       scales: {
+        yAxes: [
+          {
+            ticks: {
+              min: 0.3,
+              max: 1.5,
+            },
+          },
+        ],
         xAxes: [
           {
             type: "time",
             display: true,
             ticks: {
-              // use initial padding_percent
-              min: new Date(2020, 3, 0),
-              max: new Date(2020, 3, 5),
+              min: new Date(2020, 3, 0).valueOf(),
+              max: new Date(2020, 3, 5).valueOf(),
               maxRotation: 0,
               autoSkip: true,
               autoSkipPadding: 30,
@@ -92,7 +55,6 @@ window.onload = function () {
               },
             },
             position: "bottom",
-            // offset: true,
             time: {
               displayFormats: {
                 millisecond: "HH:mm:ss.SSS",
