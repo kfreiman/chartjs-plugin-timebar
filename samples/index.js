@@ -69,10 +69,4 @@ window.onload = function () {
       },
     },
   });
-
-  // new Chart(ctx, {
-  //   type: "horizontalBar",
-  //   data: data,
-  //   options: options,
-  // });
 };
