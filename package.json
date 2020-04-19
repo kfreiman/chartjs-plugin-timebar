@@ -2,7 +2,7 @@
   "name": "chartjs-plugin-timebar",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "dependencies": {
     "chart.js": "^2.9.3"
   },
